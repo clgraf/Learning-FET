@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<script>
+		// Sample code snippet to see JavaScript Prototype Inheritance / Chain
+		
+		function Parent() {
+			var parentPrivate = "parent private data";
+			var that = this;
+			this.parentMethodForPrivate = function() {
+				return parentPrivate;
+			};
+
+			document.write("parent"  + "<br />");
+		}
+
+		Parent.prototype = {
+			parentData : "parent data",
+			parentMethod : function(arg) {
+				return "parent method";
+			},
+			overrideMethod : function(arg) {
+				return arg + " overriden parent method";
+			}
+		}
+
+		function Child() {
+			// super constructor is not called, we have to invoke it
+			Parent.call(this);
+			document.write(this.parentData + "<br />");
+			
+			var that = this;
+			this.parentPrivate = function() {
+				return that.parentMethodForPrivate();
+			};
+			document.write("child"  + "<br />");
+		}
+
+		//inheritance
+		Child.prototype = new Parent();// parent
+		Child.prototype.constructor = Child;
+
+		//lets add extented functions
+		Child.prototype.extensionMethod = function() {
+			return "child’s " + this.parentData;
+		};
+
+		//override inherited functions
+		Child.prototype.overrideMethod = function() {
+			//parent’s method is called
+			return "Invoking from child"
+					+ Parent.prototype.overrideMethod.call(this, " test");
+		};
+
+		var child = new Child();		
+		
+		document.write(child.extensionMethod() + "<br />"); //child’s parent data
+		document.write(child.parentData + "<br />"); //parent data
+		document.write(child.parentMethod() + "<br />"); //parent method
+		document.write(child.overrideMethod() + "<br />"); //Invoking from child test overriden parent method
+		document.write(child.parentPrivate() + "<br />"); // parent private data
+
+		if(child instanceof Parent)
+			document.write("child instanceof Parent" + " <br />"); //true
+		if(child instanceof Child)
+			document.write("child instanceof Child" + "<br />"); //true
+	</script>
+
+</body>
+</html>
+
+
+
+
+

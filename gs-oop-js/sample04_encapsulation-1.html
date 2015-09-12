@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<script>
+		// Sample code snippet for Object Encapsulation in JavaScript
+		
+		/* Public methods defined on the outside of a function object can not access private member variables as they are not defined in the same scope as those. */ 	
+		
+		function Person(n) {
+			// name and getName are both public
+			this.name = n;
+			this.getName = function() {
+				return this.name;
+			}
+		}
+
+		function Rectangle(h, w) {
+			var width = w; // Both the 'width' and 'w' is private
+			var heigth = h; // Both the 'height' and 'h' is private
+			this.setWidth = function(w) {
+				width = w;
+			}
+			this.setHeight = function(h) {
+				heigth = h;
+			}
+			this.getWidth = function() {
+				return width;
+			}
+			this.getHeight = function() {
+				return heigth;
+			}
+			this.constructor.prototype.getDiagonal = function() {
+				return Math.sqrt(heigth * heigth + width * width);
+			};
+		}
+		
+		Rectangle.prototype.getArea = function() {
+			// We must use accessors in a prototype kind of method,
+			// then these methods can not access the private members
+			// of a created object.
+			return this.getWidth() * this.getHeight();
+		};
+		
+		var rect = new Rectangle(60, 70);
+		rect.setHeight(20);
+		document.write("The rectangle area is: " + rect.getArea() + "<br>");
+		document.write("The rectangle diagonal is: " + rect.getDiagonal() + "<br>");
+	</script>
+
+</body>
+</html>
+
+
+
+
+

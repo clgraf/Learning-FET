@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		// ----------- Sample code snippet of custom object creation in JavaScript ------------
+
+		/*
+		 To add properties and methods to the class, we use the ’this’ operator, followed by the name of the property.
+		 Methods and properties can be created anywhere in JavaScript, and not just in the class constructor.
+		 */
+		function BookOrder(customer, book, qty) {
+			this.customerName = customer;
+			this.bookName = book;
+			this.qty = qty;
+			this.showOrder = displayBookOrder;
+		}
+
+		function displayBookOrder() {
+			document.write("<p>Customer name: " + this.customerName);
+			document.write("<br />BookType: " + this.bookName);
+			document.write("<br />Quantity: " + this.qty);
+		}
+
+		// Instances of build-in or custom object types can be created using “new” operator
+		var javaOrder = new BookOrder("Tirthal", "Java", 5);
+		var jsOrder = new BookOrder("Tirthal", "Javascript", 2);
+
+		javaOrder.showOrder();
+		jsOrder.showOrder();
+	</script>
+
+</body>
+</html>
+
+
+
+
+

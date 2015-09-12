@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<p id="demo"></p>
+
+	<script>
+		// Sample code snippet for singlton pattern implementation in JavaScript
+		
+		var Singleton = (function() {
+
+			// private scope
+			var instance;
+
+			// private scope
+			function createInstance() {
+				var object = new Object("I am the instance");
+				return object;
+			}
+
+			return {
+				getInstance : function() {
+					if (!instance) {
+						instance = createInstance();
+					}
+
+					return instance;
+				}
+			};
+		})();
+
+		function run() {
+
+			//Different instance
+			//var instance1 = new Object();		
+				
+			var instance1 = Singleton.getInstance();
+			
+			var instance2 = Singleton.getInstance();
+
+			alert("Same instance: " + (instance1 === instance2));
+		}
+	</script>
+
+	<input type='submit' value='Run' onClick='javascript:run();'>
+</body>
+</html>
+
+
+
+
+

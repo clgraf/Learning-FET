@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<script>
+		// Sample code snippet to understand Prototype in JavaScript
+		
+		/* 
+		   JavaScript is referred to as a prototype-based language.
+		   
+		   The functions in JavaScript are objects and they contain methods and properties. 
+		   Some of the common methods are apply() and call() and some of the common properties are length and constructor. 
+		   
+		   Another property of the function objects is prototype. 
+		   Prototype is a property that gets created as soon as you define the function. Its initial value is an empty object. 
+		   If object does have its own property and the prototype also has one with the same name then the own property takes precedence over the prototype's.
+		*/
+		
+		function Gadget(name, color) {
+			this.name = name;
+			this.color = color;
+			this.whatAreYou = function() {
+				return 'I am a ' + this.color + ' ' + this.name + ' with price of Rs.' + this.price;
+			}
+		}
+		
+		Gadget.prototype.price = 100;	// See prototype usage in action
+		var newtoy = new Gadget('webcam', 'black');
+				
+		alert(newtoy.name);
+		alert(newtoy.price);
+		alert(newtoy.whatAreYou());
+		
+	</script>
+
+</body>
+</html>
+
+
+
+
+

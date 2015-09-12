@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<script>
+		// Sample code snippet for fundamental patterns in JavaScript
+		
+		// ------> Functions as abstractions
+		console.log("Functions as abstractions");
+		
+		var work = function() {
+			console.log("working hard!")
+		};
+
+		var dowork = function(f) {
+			console.log("starting");
+			  
+			try {
+				f();
+			}
+			catch(ex) {
+				console.log(ex);
+			}
+			  
+			console.log("end");
+		}
+
+		dowork(work);
+		
+		// ------> Functions to build modules (revealing module pattern)
+		console.log("Functions to build modules");
+		
+		var createWorker = function() {
+			var workCount = 0; // this is private, and not exposed to outside world
+			
+			// private methods / modules
+			var task1 = function() {
+				workCount += 1;
+				console.log("In task1 - counter = " + workCount);
+			};
+			
+			var task2 = function() {
+				workCount += 1;
+				console.log("In task2 - counter = " + workCount);
+			};
+			
+			// expose public APIs, which internally maps to private modules
+			return {
+				job1: task1,
+				job2: task2
+			};
+		};
+		
+		var worker = createWorker();
+		
+		worker.job1();
+		worker.job2();
+		worker.job2();
+		worker.job2();
+		
+		// worker.task1();	// this will give runtime error, as task1 has private visibility in createWorker.
+		
+		// ------> Functions to avoid global variables
+		console.log("Functions to avoid global variables");
+		
+		// Global variables are evil, as JavaScript is dynamically typed language. It is easy to override global variables by someone else. So always should try to avoid global variables.
+		
+		// Improve code by having single global variable
+		var program = function() {
+			var createWorker = function() {
+				var workCount = 0; 
+								
+				var task1 = function() {
+					workCount += 1;
+					console.log("In task1 - counter = " + workCount);
+				};
+				
+				var task2 = function() {
+					workCount += 1;
+					console.log("In task2 - counter = " + workCount);
+				};
+								
+				return {
+					job1: task1,
+					job2: task2
+				};
+			};
+			
+			var worker = createWorker();
+			
+			worker.job1();
+			worker.job2();
+			worker.job2();
+			worker.job2();
+		};
+	
+		program();
+		
+		// Improve code by having zero global variable using anonymous self-invoking function
+		(function() {
+			var createWorker = function() {
+				var workCount = 0; 
+								
+				var task1 = function() {
+					workCount += 1;
+					console.log("In task1 - counter = " + workCount);
+				};
+				
+				var task2 = function() {
+					workCount += 1;
+					console.log("In task2 - counter = " + workCount);
+				};
+								
+				return {
+					job1: task1,
+					job2: task2
+				};
+			};
+			
+			var worker = createWorker();
+			
+			worker.job1();
+			worker.job2();
+			worker.job2();
+			worker.job2();
+		}());
+	</script>
+
+</body>
+</html>
+
+
+
+
+
