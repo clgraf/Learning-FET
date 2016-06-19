@@ -8,14 +8,17 @@ For getting hands dirty with Angular.
 	- [Download Latest NodeJS](https://nodejs.org/en/download/current/) (For example, I tried with version: v6.2.1 - includes npm 3.9.3)
 	- Open a command prompt in the project's root directory
 	- Type: "npm install" (installs the dependencies as defined in the package.json file)
-	- Type: "npm start" (launches the TypeScript compiler to compile the application and wait for changes + starts the lite-server and launches the browser to run the application)
+	- Type: "npm start" (launches the TypeScript compiler to compile the application and wait for changes)
 	- Finally, access application in browser @ http://localhost:3000
+	
+* [gs-angular2-app](https://github.com/tirthalpatel/Learning-FET/tree/master/gs-angular/gs-angular2-app) - A project created for getting started with Angular 2 and trying its numerous features.
 
+* [angular2-webpack-bootstrap](https://github.com/tirthalpatel/Learning-FET/tree/master/gs-angular/angular2-webpack-bootstrap) - A POC project of Angular 2 + Webpack + Bootstrap CSS.
+	
 * [angular2-quickstart](https://github.com/tirthalpatel/Learning-FET/tree/master/gs-angular/angular2-quickstart) - A downloaded QuickStart project from [Angular Repo](https://github.com/angular/quickstart) for setting up local environment and running an first Angular application. 
 
 * [angular2-seed](https://github.com/tirthalpatel/Learning-FET/tree/master/gs-angular/angular2-seed) - A downloaded simple starter project from [Angular Repo](https://github.com/angular/angular2-seed) demonstrating the basic concepts of Angular 2.
 
-* [angular2-poc-app](https://github.com/tirthalpatel/Learning-FET/tree/master/gs-angular/angular2-poc-app) - A POC project for getting started with Angular 2 and trying its numerous features.
 	
 ## Also Refer
 
