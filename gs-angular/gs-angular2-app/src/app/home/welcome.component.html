@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+    	<div class="row">
+    		<p class="bg-info text-center">home/welcome.component = Demo of using Angular 2 built-in Directives + Event binding + Component Lifecycle Hook</p>
+    	</div>    	
+        <div class="row">        	
+            <img src="./app/assets/images/welcome.jpg" class="img-responsive center-block myapp-welcome-img-spacing"
+            	[style.width.px]="600" *ngIf='showImage' /> <!-- Hint = Using Angular 2 built-in "style" and structural "ngIf" directives -->
+        </div>
+        <div class="row">
+    		<button class='btn btn-primary btn-lg center-block' (click)='toggleImage()'> <!-- Hint = Handling button's click event with Event Binding -->
+                {{showImage ? 'Hide' : 'Show'}} Image <!-- Hint = Interpolation -->
+            </button>
+    	</div>
+    	<br/><br/><br/>
+        <div class="row">
+            <div class="text-center">Developed by:</div>
+            <h3 class="text-center">Tirthal Patel</h3>
+            
+            <div class="text-center">
+                <a href="https://about.me/tirthalpatel">https://about.me/tirthalpatel</a>
+            </div>
+        </div>
+    </div>
+</div>
