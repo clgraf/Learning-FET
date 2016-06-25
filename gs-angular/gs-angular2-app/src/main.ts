@@ -6,7 +6,7 @@ import {ROUTER_PROVIDERS} from '@angular/router';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import {AngularLearningApp} from './app/angular-learning-app';
+import {AngularLearningApp} from './app/learning-app.component';
 
 enableProdMode()
 
