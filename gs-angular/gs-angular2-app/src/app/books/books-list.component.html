@@ -1,0 +1,68 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+    	<div class="row">
+    		<p class="bg-info text-center">books/* = Demo of separating services and components + Retrieving data using Http and Anguar 2 Rx Observables</p>
+    	</div>    	
+        <div class="row">
+          <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        </div>
+        <div class="row">
+    		<div class='table-responsive'>
+            <table class='table' *ngIf='books && books.length'>
+                <thead>
+                    <tr>
+                        <th>
+                            <button class='btn btn-primary' (click)='toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Book Name</th>                       
+                        <th>Category</th>
+                        <th>Price</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                		<td colspan="4"><p class="bg-info text-center">Demo of using Http for retrieving data with Rx Observable</p></td>                		
+                	</tr>
+                    <tr *ngFor='let book of books'>
+                        <td>
+                            <img *ngIf='showImage'
+                                 [src]='book.imageUrl'
+                                 [title]='book.name | uppercase'
+                                 [style.width.px]='100' 
+                                 [style.margin.px]='5'>
+                        </td>
+                        <td> 
+                        	<a [routerLink]="['/book', book.id]">{{book.name}}</a>
+                        </td>                        
+                        <td>{{ book.category | lowercase }}</td>
+                        <td>{{ book.price | currency:'USD':true:'1.2-2' }}</td>                        
+                    </tr>
+                    
+                    <tr>
+                		<td colspan="4"><p class="bg-info text-center">Demo of Async Pipe</p></td>                		
+                	</tr>
+                    <tr *ngFor='let book of booksUsingRxJsAsyncPipe | async'>
+                        <td>
+                            <img *ngIf='showImage'
+                                 [src]='book.imageUrl'
+                                 [title]='book.name | uppercase'
+                                 [style.width.px]='100' 
+                                 [style.margin.px]='5'>
+                        </td>
+                        <td> 
+                        	<a [routerLink]="['/book', book.id]">{{book.name}}</a>
+                        </td>                        
+                        <td>{{ book.category | lowercase }}</td>
+                        <td>{{ book.price | currency:'USD':true:'1.2-2' }}</td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+    	</div>    	    	          	
+    </div>
+</div>
