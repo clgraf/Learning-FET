@@ -5,7 +5,7 @@
         "description": "Software Systems Architecture, Second Edition is a highly regarded, practitioner-oriented guide to designing and implementing effective architectures for information systems. It is both a readily accessible introduction to software architecture and an invaluable handbook of well-established best practices.",
         "price": 3556.95,        
         "imageUrl": "http://ecx.images-amazon.com/images/I/51dy81%2B29FL._SX359_BO1,204,203,200_.jpg",
-        "category": "Computer Science"
+        "category": "Architecture"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "description": "Whether you’re a developer, systems administrator, tester, or manager, this book will help your organization move from idea to release faster than ever―so you can deliver value to your business rapidly and reliably.",
         "price": 2979.75,        
         "imageUrl": "http://ecx.images-amazon.com/images/I/51NbiDn81NL._SX385_BO1,204,203,200_.jpg",
-        "category": "Computer Science"
+        "category": "DevOps"
     },
     {
         "id": 3,
@@ -21,6 +21,6 @@
         "description": "Cloud computing is changing the way businesses and users interact with computers and mobile devices. Gone are the days of expensive data centers, racks of disk drives, and large IT support teams. Today they are replaced with software applications delivered to users on demand from the cloud; with high-capacity, auto-replicated, secure, cloud-based disk storage and databases; with virtualized server and desktop environments and with cloud- based collaboration tools that support the success of onsite. remote, and hybrid teams. Cloud Computing presents a hands-on introduction to cloud technologies.",
         "price": 400,        
         "imageUrl": "http://ecx.images-amazon.com/images/I/51z7eXug8CL._SX357_BO1,204,203,200_.jpg",
-        "category": "Computer Science"
+        "category": "Cloud"
     }
 ]
