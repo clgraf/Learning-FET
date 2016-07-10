@@ -32,3 +32,9 @@ A project for getting started with Angular 2 and trying its numerous features.
 - run `npm run typings-install` to install typings
 - run `npm start` to fire up dev server
 - open browser to [`http://localhost:3000`](http://localhost:3000)
+
+## Speaking Snapshot
+
+![snapshots/DemoApp-HelloWorld.png](https://github.com/tirthalpatel/Learning-FET/blob/master/gs-angular/gs-angular2-app/snapshots/DemoApp-HelloWorld.png)
+![snapshots/DemoApp-Books.png](https://github.com/tirthalpatel/Learning-FET/blob/master/gs-angular/gs-angular2-app/snapshots/DemoApp-Books.png)
+
