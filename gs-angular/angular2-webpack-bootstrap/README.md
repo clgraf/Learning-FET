@@ -1,6 +1,6 @@
 # angular2-webpack-bootstrap
 
-A POC project of Angular 2 + Webpack + Bootstrap CSS.
+A POC project of Angular 2 + Webpack + Bootstrap CSS. Related post is [here](http://tirthalpatel.blogspot.com/2016/09/how-to-use-bootstrap-with-webpack-in-angular2-seed-project.html)
 
 ### Usage
 
